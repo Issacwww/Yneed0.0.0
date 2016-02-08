@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="微信"
+            android:text="课程"
             android:textColor="#ffffff" />
     </LinearLayout>
 
@@ -47,7 +47,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="朋友"
+            android:text="资讯"
             android:textColor="#ffffff" />
     </LinearLayout>
 
@@ -70,7 +70,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="通讯录"
+            android:text="我的"
             android:textColor="#ffffff" />
     </LinearLayout>
 
