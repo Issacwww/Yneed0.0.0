@@ -36,12 +36,11 @@ public class Yneedapp extends Activity implements OnClickListener
     private LinearLayout mTabWeixin;
     private LinearLayout mTabFrd;
     private LinearLayout mTabAddress;
-    private LinearLayout mTabSetting;
 
     private ImageButton mWeixinImg;
     private ImageButton mFrdImg;
     private ImageButton mAddressImg;
-    private ImageButton mSettingImg;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -61,7 +60,6 @@ public class Yneedapp extends Activity implements OnClickListener
         mTabWeixin.setOnClickListener(this);
         mTabFrd.setOnClickListener(this);
         mTabAddress.setOnClickListener(this);
-        mTabSetting.setOnClickListener(this);
         mViewPager.addOnPageChangeListener(new OnPageChangeListener()
         {
 
@@ -82,10 +80,7 @@ public class Yneedapp extends Activity implements OnClickListener
                         mAddressImg
                                 .setImageResource(R.drawable.tab_address_pressed);
                         break;
-                    case 3:
-                        mSettingImg
-                                .setImageResource(R.drawable.tab_settings_pressed);
-                        break;
+
 
                 }
 
@@ -112,22 +107,20 @@ public class Yneedapp extends Activity implements OnClickListener
         mTabWeixin = (LinearLayout) findViewById(R.id.id_tab_weixin);
         mTabFrd = (LinearLayout) findViewById(R.id.id_tab_frd);
         mTabAddress = (LinearLayout) findViewById(R.id.id_tab_address);
-        mTabSetting = (LinearLayout) findViewById(R.id.id_tab_settings);
+
         // ImageButton
         mWeixinImg = (ImageButton) findViewById(R.id.id_tab_weixin_img);
         mFrdImg = (ImageButton) findViewById(R.id.id_tab_frd_img);
         mAddressImg = (ImageButton) findViewById(R.id.id_tab_address_img);
-        mSettingImg = (ImageButton) findViewById(R.id.id_tab_settings_img);
+
 
         LayoutInflater mInflater = LayoutInflater.from(this);
         View tab01 = mInflater.inflate(R.layout.tab01, null);
         View tab02 = mInflater.inflate(R.layout.tab02, null);
         View tab03 = mInflater.inflate(R.layout.tab03, null);
-        View tab04 = mInflater.inflate(R.layout.tab04, null);
         mViews.add(tab01);
         mViews.add(tab02);
         mViews.add(tab03);
-        mViews.add(tab04);
 
         mAdapter = new PagerAdapter()
         {
@@ -182,11 +175,6 @@ public class Yneedapp extends Activity implements OnClickListener
                 mViewPager.setCurrentItem(2);
                 mAddressImg.setImageResource(R.drawable.tab_address_pressed);
                 break;
-            case R.id.id_tab_settings:
-                mViewPager.setCurrentItem(3);
-                mSettingImg.setImageResource(R.drawable.tab_settings_pressed);
-                break;
-
             default:
                 break;
         }
@@ -200,7 +188,6 @@ public class Yneedapp extends Activity implements OnClickListener
         mWeixinImg.setImageResource(R.drawable.tab_weixin_normal);
         mFrdImg.setImageResource(R.drawable.tab_find_frd_normal);
         mAddressImg.setImageResource(R.drawable.tab_address_normal);
-        mSettingImg.setImageResource(R.drawable.tab_settings_normal);
     }
 
 }
