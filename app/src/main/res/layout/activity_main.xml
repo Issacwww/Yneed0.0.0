@@ -5,7 +5,19 @@
     android:orientation="vertical" >
 
     <include layout="@layout/top" />
-
+    <com.yneed.yneed.MyImgScroll
+        android:id="@+id/mvp"
+        android:layout_marginTop="0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="140dp" />
+    <LinearLayout
+        android:id="@+id/vb"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="3dip"
+        android:gravity="center"
+        android:orientation="horizontal" >
+    </LinearLayout>
     <android.support.v4.view.ViewPager
         android:id="@+id/id_viewpager"
         android:layout_width="fill_parent"
