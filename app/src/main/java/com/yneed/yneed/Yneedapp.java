@@ -165,14 +165,20 @@ public class Yneedapp extends Activity implements OnClickListener {
             case R.id.id_tab_weixin:
                 mViewPager.setCurrentItem(0);
                 mWeixinImg.setImageResource(R.drawable.tab_weixin_pressed);
+                myPager.setVisibility(View.VISIBLE);  //设置滚动图片可见
+                ovalLayout.setVisibility(View.VISIBLE);//设置进度小圆点可见
                 break;
             case R.id.id_tab_frd:
                 mViewPager.setCurrentItem(1);
                 mFrdImg.setImageResource(R.drawable.tab_find_frd_pressed);
+                myPager.setVisibility(View.GONE); //设置滚动图片隐藏
+                ovalLayout.setVisibility(View.GONE);//设置进度小圆点隐藏
                 break;
             case R.id.id_tab_address:
                 mViewPager.setCurrentItem(2);
                 mAddressImg.setImageResource(R.drawable.tab_address_pressed);
+                myPager.setVisibility(View.GONE);
+                ovalLayout.setVisibility(View.GONE);
                 break;
             default:
                 break;
