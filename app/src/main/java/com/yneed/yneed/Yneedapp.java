@@ -229,6 +229,7 @@ public class Yneedapp extends Activity implements OnClickListener {
                 mWeixinImg.setImageResource(R.drawable.tab_weixin_pressed);
                 myPager.setVisibility(View.VISIBLE);  //设置滚动图片可见
                 ovalLayout.setVisibility(View.VISIBLE);//设置进度小圆点可见
+                searchlayout.setVisibility(View.VISIBLE);//设置进度s搜索栏可见
                 break;
             case R.id.id_tab_frd:
                 mViewPager.setCurrentItem(1);
@@ -248,6 +249,7 @@ public class Yneedapp extends Activity implements OnClickListener {
                 break;
         }
     }
+
 
     /**
      * 将所有的图片切换为暗色的
