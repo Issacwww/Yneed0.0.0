@@ -21,6 +21,12 @@ import android.widget.Toast;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
+import android.view.View.OnKeyListener;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class Yneedapp extends Activity implements OnClickListener {
 
@@ -46,11 +52,18 @@ public class Yneedapp extends Activity implements OnClickListener {
      */
     private GoogleApiClient client;
 
+
+    private EditText mEtSearch = null;// 输入搜索内容
+    private Button mBtnClearSearchText = null;// 清空搜索信息的按钮
+    private LinearLayout mLayoutClearSearchText = null;
+    private LinearLayout searchlayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+
 
         initView();
 
@@ -66,7 +79,56 @@ public class Yneedapp extends Activity implements OnClickListener {
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
-    }
+
+        searchlayout = (LinearLayout) findViewById(R.id.serarch_layout);
+        mEtSearch = (EditText) findViewById(R.id.et_search);
+        mBtnClearSearchText = (Button) findViewById(R.id.btn_clear_search_text);
+        mLayoutClearSearchText = (LinearLayout) findViewById(R.id.layout_clear_search_text);
+        mEtSearch.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                int textLength = mEtSearch.getText().length();
+                if (textLength > 0) {
+                    mLayoutClearSearchText.setVisibility(View.VISIBLE);
+                } else {
+                    mLayoutClearSearchText.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        mBtnClearSearchText.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mEtSearch.setText("");
+                mLayoutClearSearchText.setVisibility(View.GONE);
+            }
+        });
+        mEtSearch.setOnKeyListener(new OnKeyListener() {
+
+            @Override
+            public boolean onKey(View arg0, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_ENTER) {
+                    Toast.makeText(Yneedapp.this,
+                            mEtSearch.getText().toString().trim(),
+                            Toast.LENGTH_LONG).show();
+                }
+                return false;
+            }
+        });
+
+}
 
     private void initEvents() {
         mTabWeixin.setOnClickListener(this);
@@ -173,12 +235,14 @@ public class Yneedapp extends Activity implements OnClickListener {
                 mFrdImg.setImageResource(R.drawable.tab_find_frd_pressed);
                 myPager.setVisibility(View.GONE); //设置滚动图片隐藏
                 ovalLayout.setVisibility(View.GONE);//设置进度小圆点隐藏
+                searchlayout.setVisibility(View.GONE);
                 break;
             case R.id.id_tab_address:
                 mViewPager.setCurrentItem(2);
                 mAddressImg.setImageResource(R.drawable.tab_address_pressed);
                 myPager.setVisibility(View.GONE);
                 ovalLayout.setVisibility(View.GONE);
+                searchlayout.setVisibility(View.GONE);
                 break;
             default:
                 break;
