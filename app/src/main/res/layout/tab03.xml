@@ -4,12 +4,50 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="147dp"
+        android:src="@drawable/login"
+        android:gravity="center"
+        />
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="This is User Tab"
         android:textSize="30sp"
         android:textStyle="bold" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:text="登录"
+            android:id="@+id/button2"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="39dp"
+            android:layout_marginEnd="39dp" />
+
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:text="注册"
+            android:id="@+id/button"
+            android:layout_weight="0.26"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="41dp"
+            android:layout_marginStart="41dp" />
+
+    </RelativeLayout>
 </LinearLayout>

@@ -3,13 +3,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-
     <TextView
+    android:layout_width="fill_parent"
+    android:layout_height="100dp"
+    android:gravity="center"
+    android:text="文章分类"
+    android:textSize="30sp"
+    android:textStyle="bold" />
+    <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="fill_parent">
+
+    <ImageView
+        android:id="@+id/ya"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:gravity="center"
-        android:text="This is Information Tab"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:src="@drawable/toefl"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="63dp" />
+
+    <ImageView
+        android:id="@+id/to"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:src="@drawable/ielts"
+        android:layout_alignTop="@+id/ya"
+        android:layout_centerHorizontal="true" />
+
+
+
+
+    <ImageView
+        android:id="@+id/lu"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:gravity="right"
+        android:src="@drawable/gongwuyuan"
+        android:layout_alignTop="@+id/to"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
 
 </LinearLayout>
