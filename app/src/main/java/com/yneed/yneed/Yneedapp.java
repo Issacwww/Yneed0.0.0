@@ -58,13 +58,20 @@ public class Yneedapp extends Activity implements OnClickListener {
     private LinearLayout mLayoutClearSearchText = null;
     private LinearLayout searchlayout;
 
+    Button mzhuce_button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+        mzhuce_button= (Button) this.findViewById(R.id.zhuce);//绑定注册按钮
+        //设置点击事件
+        mzhuce_button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-
+            }
+        });
         initView();
 
         initEvents();
