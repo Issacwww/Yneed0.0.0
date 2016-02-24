@@ -30,4 +30,6 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     compile files('libs/MobTools-2016.0131.1739.jar')
+    compile(name: 'SMSSDK-2.0.1', ext: 'aar')
+    compile(name: 'SMSSDKGUI-2.0.1', ext: 'aar')
 }

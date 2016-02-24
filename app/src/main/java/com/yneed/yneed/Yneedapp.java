@@ -4,7 +4,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
+import java.util.Random;
+
 import android.app.Activity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -27,6 +31,10 @@ import android.view.KeyEvent;
 import android.view.View.OnKeyListener;
 import android.widget.Button;
 import android.widget.EditText;
+
+import cn.smssdk.EventHandler;
+import cn.smssdk.SMSSDK;
+import cn.smssdk.gui.RegisterPage;
 
 public class Yneedapp extends Activity implements OnClickListener {
 
@@ -59,16 +67,43 @@ public class Yneedapp extends Activity implements OnClickListener {
     private LinearLayout searchlayout;
 
     Button mzhuce_button;
+    String APPKEY="f968933685b2";
+    String appserete="c88087a41d85e7f2174c1d1b170062be";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+        //初始化
+        SMSSDK.initSDK(this, APPKEY, appserete);
+        //配置信息
         mzhuce_button= (Button) this.findViewById(R.id.zhuce);//绑定注册按钮
         //设置点击事件
         mzhuce_button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                //注册手机号
+                RegisterPage registerPage = new RegisterPage();
+                //注册回调事件
+                registerPage.setRegisterCallback(new EventHandler() {
+                    //事件完成后调用
+                    public void afterEvent(int event, int result, Object data) {
+                        //判断结果是否已经完成
+                        if (result == SMSSDK.RESULT_COMPLETE) {
+                            //获取data
+                            HashMap<String, Object> maps = (HashMap<String, Object>) data;
+                            //国家
+                            String country = (String) maps.get("country");
+                            //手机号
+                            String phone = (String) maps.get("phone");
+
+                            submitUserInfo(country,phone);
+                        }
+                    }
+
+                });
+                //显示注册界面
+                registerPage.show(Yneedapp.this);
 
             }
         });
@@ -137,6 +172,19 @@ public class Yneedapp extends Activity implements OnClickListener {
 
 }
 
+    /**
+     *提交用户信息
+     * @param country
+     * @param phone
+     */
+
+    public void submitUserInfo(String country,String phone) {
+        Random r=new Random();
+
+        String uid=Math.abs(r.nextInt())+"";
+        String nickName="Yneed";
+        SMSSDK.submitUserInfo(uid,nickName,null,country,phone);
+    }
     private void initEvents() {
         mTabWeixin.setOnClickListener(this);
         mTabFrd.setOnClickListener(this);
