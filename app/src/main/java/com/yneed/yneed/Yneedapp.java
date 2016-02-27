@@ -20,6 +20,7 @@ import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
@@ -60,55 +61,76 @@ public class Yneedapp extends Activity implements OnClickListener {
      */
     private GoogleApiClient client;
 
-
     private EditText mEtSearch = null;// 输入搜索内容
     private Button mBtnClearSearchText = null;// 清空搜索信息的按钮
     private LinearLayout mLayoutClearSearchText = null;
     private LinearLayout searchlayout;
 
-    Button mzhuce_button;
+    //短信注册变量声明
+    Button mzhuce_button=null;
     String APPKEY="f968933685b2";
-    String appserete="c88087a41d85e7f2174c1d1b170062be";
+    String APPSECRETE="c88087a41d85e7f2174c1d1b170062be";
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+
+        List<ItemBean>itemBeanList =new ArrayList<>();
+        for(int i = 0;i < 20; i++)
+        {
+            itemBeanList.add(new ItemBean(
+                    R.drawable.logo,
+                    "新学期优惠活动"+i,
+                    "考研考公小语种"+i
+            ));
+        }
+        ListView listView = (ListView) findViewById(R.id.lv_tab01);
+        listView.setAdapter(new MyLvAdapter(this,itemBeanList));
+
+
         //初始化
-        SMSSDK.initSDK(this, APPKEY, appserete);
+        SMSSDK.initSDK(this, APPKEY, APPSECRETE);
         //配置信息
-        mzhuce_button= (Button) this.findViewById(R.id.zhuce);//绑定注册按钮
+        mzhuce_button= (Button) findViewById(R.id.zhuce);//绑定注册按钮
         //设置点击事件
+    /*
         mzhuce_button.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //注册手机号
-                RegisterPage registerPage = new RegisterPage();
+            public void onClick(View v)
+            {//注册手机号
+
+               RegisterPage registerPage = new RegisterPage();
                 //注册回调事件
-                registerPage.setRegisterCallback(new EventHandler() {
+                registerPage.setRegisterCallback(new EventHandler()
+                {
                     //事件完成后调用
-                    public void afterEvent(int event, int result, Object data) {
-                        //判断结果是否已经完成
-                        if (result == SMSSDK.RESULT_COMPLETE) {
-                            //获取data
-                            HashMap<String, Object> maps = (HashMap<String, Object>) data;
-                            //国家
-                            String country = (String) maps.get("country");
-                            //手机号
-                            String phone = (String) maps.get("phone");
-
-                            submitUserInfo(country,phone);
-                        }
+                    @Override
+                    public void afterEvent(int event,int result, Object data)
+                    {
+                            //判断结果是否已经完成
+                            if (result == SMSSDK.RESULT_COMPLETE) {
+                                //获取data
+                                HashMap<String, Object> maps = (HashMap<String, Object>) data;
+                                //国家
+                                    String country = (String) maps.get("country");
+                                    //手机号
+                                    String phone = (String) maps.get("phone");
+                               submitUserInfo(country, phone);
+                            }
                     }
-
                 });
                 //显示注册界面
                 registerPage.show(Yneedapp.this);
-
             }
-        });
-        initView();
 
+        });
+
+      */
+        initView();
         initEvents();
         myPager = (MyImgScroll) findViewById(R.id.mvp);
         ovalLayout = (LinearLayout) findViewById(R.id.vb);
@@ -122,11 +144,11 @@ public class Yneedapp extends Activity implements OnClickListener {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
-        searchlayout = (LinearLayout) findViewById(R.id.serarch_layout);
-        mEtSearch = (EditText) findViewById(R.id.et_search);
-        mBtnClearSearchText = (Button) findViewById(R.id.btn_clear_search_text);
-        mLayoutClearSearchText = (LinearLayout) findViewById(R.id.layout_clear_search_text);
-        mEtSearch.addTextChangedListener(new TextWatcher() {
+            searchlayout = (LinearLayout) findViewById(R.id.serarch_layout);
+            mEtSearch = (EditText) findViewById(R.id.et_search);
+            mBtnClearSearchText = (Button) findViewById(R.id.btn_clear_search_text);
+            mLayoutClearSearchText = (LinearLayout) findViewById(R.id.layout_clear_search_text);
+            mEtSearch.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before,
@@ -203,17 +225,16 @@ public class Yneedapp extends Activity implements OnClickListener {
                         mFrdImg.setImageResource(R.drawable.tab_find_frd_pressed);
                         break;
                     case 2:
-                        mAddressImg
-                                .setImageResource(R.drawable.tab_address_pressed);
+                        mAddressImg.setImageResource(R.drawable.tab_address_pressed);
                         break;
 
 
+                    }
+
                 }
 
-            }
-
-            @Override
-            public void onPageScrolled(int arg0, float arg1, int arg2) {
+                 @Override
+                  public void onPageScrolled(int arg0, float arg1, int arg2) {
 
             }
 
