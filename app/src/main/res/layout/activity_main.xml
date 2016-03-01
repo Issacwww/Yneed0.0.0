@@ -74,7 +74,11 @@
         android:orientation="horizontal" >
 
     </LinearLayout>
-
+    <Button
+        android:id="@+id/zhuce1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注册@@"/>
     <ListView
         android:id="@+id/lv_main"
         android:layout_width="match_parent"

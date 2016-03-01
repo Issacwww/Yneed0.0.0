@@ -86,8 +86,8 @@ public class Yneedapp extends Activity implements OnClickListener {
         for (int i = 0; i < 20; i++) {
             dataList.add(new ItemBean(
                     R.drawable.logo,
-                    "我是标题" + i,
-                    "我是内容" + i));
+                    "Yneed优惠活动" + i,
+                    "雅思托福小语种" + i));
         }
         // 设置适配器
         listView.setAdapter(new MyLvAdapter(this, dataList));
@@ -96,9 +96,9 @@ public class Yneedapp extends Activity implements OnClickListener {
         //初始化
         SMSSDK.initSDK(this, APPKEY, APPSECRETE);
         //配置信息
-        mzhuce_button= (Button) findViewById(R.id.zhuce);//绑定注册按钮
+        mzhuce_button= (Button) findViewById(R.id.zhuce1);//绑定注册按钮
         //设置点击事件
-    /*
+
         mzhuce_button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v)
@@ -130,7 +130,7 @@ public class Yneedapp extends Activity implements OnClickListener {
 
         });
 
-      */
+
         initView();
         initEvents();
         myPager = (MyImgScroll) findViewById(R.id.mvp);
