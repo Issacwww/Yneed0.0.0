@@ -1,5 +1,6 @@
 package com.yneed.yneed;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -80,18 +81,13 @@ public class Yneedapp extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-         listView = (ListView) findViewById(R.id.lv_main);
-        List<ItemBean> dataList = new ArrayList<>();
-        // 创建假数据
-        for (int i = 0; i < 20; i++) {
-            dataList.add(new ItemBean(
-                    R.drawable.logo,
-                    "Yneed优惠活动" + i,
-                    "雅思托福小语种" + i));
-        }
-        // 设置适配器
-        listView.setAdapter(new MyLvAdapter(this, dataList));
 
+        findViewById(R.id.btnStartListView).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Yneedapp.this,information_listview.class));
+            }
+        });
 
         //初始化
         SMSSDK.initSDK(this, APPKEY, APPSECRETE);
@@ -304,7 +300,7 @@ public class Yneedapp extends Activity implements OnClickListener {
             case R.id.id_tab_weixin:
                 mViewPager.setCurrentItem(0);
                 mWeixinImg.setImageResource(R.drawable.tab_weixin_pressed);
-                listView.setVisibility(View.VISIBLE);
+
                 myPager.setVisibility(View.VISIBLE);  //设置滚动图片可见
                 ovalLayout.setVisibility(View.VISIBLE);//设置进度小圆点可见
                 searchlayout.setVisibility(View.VISIBLE);//设置进度s搜索栏可见
@@ -312,7 +308,7 @@ public class Yneedapp extends Activity implements OnClickListener {
             case R.id.id_tab_frd:
                 mViewPager.setCurrentItem(1);
                 mFrdImg.setImageResource(R.drawable.tab_find_frd_pressed);
-                listView.setVisibility(View.GONE);
+
                 myPager.setVisibility(View.GONE); //设置滚动图片隐藏
                 ovalLayout.setVisibility(View.GONE);//设置进度小圆点隐藏
                 searchlayout.setVisibility(View.GONE);
@@ -320,7 +316,7 @@ public class Yneedapp extends Activity implements OnClickListener {
             case R.id.id_tab_address:
                 mViewPager.setCurrentItem(2);
                 mAddressImg.setImageResource(R.drawable.tab_address_pressed);
-                listView.setVisibility(View.GONE);
+
                 myPager.setVisibility(View.GONE);
                 ovalLayout.setVisibility(View.GONE);
                 searchlayout.setVisibility(View.GONE);
@@ -418,8 +414,7 @@ public class Yneedapp extends Activity implements OnClickListener {
 class  MyPagerAdapter  extends PagerAdapter {
     private Activity mActivity; // 上下文
     private List<View> mListViews; // 图片组
-    public MyPagerAdapter(){
-    }
+
     public MyPagerAdapter(Activity mActivity,List<View> mListViews){
         this.mActivity=mActivity;
         this.mListViews=mListViews;
