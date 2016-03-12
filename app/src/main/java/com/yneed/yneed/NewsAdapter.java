@@ -43,7 +43,7 @@ public class NewsAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null){
-           convertView = LayoutInflater.from(context).inflate(R.layout.news_item,null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.news_item,null);
         }
         TextView tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);
         TextView tvDesc = (TextView) convertView.findViewById(R.id.tvDesc);
@@ -55,8 +55,8 @@ public class NewsAdapter extends BaseAdapter {
         tvDesc.setText(news.getDesc());
         tvTime.setText(news.getTime());
 
-        String pic_url = news.getPic_url();
-        HttpUtils.setPicBitmap(ivPic, pic_url);
+       String pic_url = news.getPic_url();
+       HttpUtils.setPicBitmap(ivPic, pic_url);
 
         return convertView;
     }

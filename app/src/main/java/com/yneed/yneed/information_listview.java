@@ -59,8 +59,8 @@ public class information_listview extends Activity implements OnItemClickListene
         newsList = new ArrayList<News>();
         adapter = new NewsAdapter(this, newsList);
 
-   //     lvNews.setAdapter(adapter);
-//        lvNews.setOnItemClickListener(this);
+      lvNews.setAdapter(adapter);
+      lvNews.setOnItemClickListener(this);
 
 
         HttpUtils.getNewsJSON(GET_NEWS_URL, getNewsHandler);
