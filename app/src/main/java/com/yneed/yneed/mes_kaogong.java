@@ -15,7 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-public class information_listview extends Activity implements OnItemClickListener{
+public class mes_kaogong  extends Activity implements OnItemClickListener{
 
     private ListView lvNews;
     private NewsAdapter adapter;
@@ -50,15 +50,14 @@ public class information_listview extends Activity implements OnItemClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.information_lv);
+        setContentView(R.layout.mes_kaogong);
 
-        lvNews = (ListView) findViewById(R.id.lvNews);
+        lvNews = (ListView) findViewById(R.id.mesk);
         newsList = new ArrayList<News>();
         adapter = new NewsAdapter(this, newsList);
 
-      lvNews.setAdapter(adapter);
-      lvNews.setOnItemClickListener(this);
-
+        lvNews.setAdapter(adapter);
+        lvNews.setOnItemClickListener(this);
 
         HttpUtils.getNewsJSON(GET_NEWS_URL, getNewsHandler);
     }
@@ -72,3 +71,4 @@ public class information_listview extends Activity implements OnItemClickListene
     }
 
 }
+

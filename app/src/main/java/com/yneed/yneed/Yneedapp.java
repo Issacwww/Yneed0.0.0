@@ -43,8 +43,11 @@ public class Yneedapp extends Activity implements OnClickListener {
     private ViewPager mViewPager;
     private PagerAdapter mAdapter;
     private List<View> mViews = new ArrayList<View>();
-    // TAB
 
+    private LinearLayout ic_layout;
+    private LinearLayout cic_layout;
+
+    // TAB
     private LinearLayout mTabWeixin;
     private LinearLayout mTabFrd;
     private LinearLayout mTabAddress;
@@ -57,7 +60,7 @@ public class Yneedapp extends Activity implements OnClickListener {
     private LinearLayout ovalLayout; // 圆点容器
     private List<View> listViews; // 图片组
 
-    private  ListView listView;//课程列表
+
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -82,10 +85,49 @@ public class Yneedapp extends Activity implements OnClickListener {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
+
+        //跳转页面
         findViewById(R.id.btnStartListView).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Yneedapp.this,information_listview.class));
+                startActivity(new Intent(Yneedapp.this, information_listview.class));
+            }
+        });
+
+        findViewById(R.id.ies).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Yneedapp.this, mes_ielts.class));
+            }
+        });
+        findViewById(R.id.toefl).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Yneedapp.this, mes_toefl.class));
+            }
+        });
+        findViewById(R.id.kaogong).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Yneedapp.this, mes_kaogong.class));
+            }
+        });
+        findViewById(R.id. cies).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Yneedapp.this, course_ielts.class));
+            }
+        });
+        findViewById(R.id.ctoefl).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Yneedapp.this, course_toefl.class));
+            }
+        });
+        findViewById(R.id.ckaogong).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Yneedapp.this, course_kaogong.class));
             }
         });
 
@@ -97,27 +139,24 @@ public class Yneedapp extends Activity implements OnClickListener {
 
         mzhuce_button.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick(View v)
-            {//注册手机号
+            public void onClick(View v) {//注册手机号
 
-               RegisterPage registerPage = new RegisterPage();
+                RegisterPage registerPage = new RegisterPage();
                 //注册回调事件
-                registerPage.setRegisterCallback(new EventHandler()
-                {
+                registerPage.setRegisterCallback(new EventHandler() {
                     //事件完成后调用
                     @Override
-                    public void afterEvent(int event,int result, Object data)
-                    {
-                            //判断结果是否已经完成
-                            if (result == SMSSDK.RESULT_COMPLETE) {
-                                //获取data
-                                HashMap<String, Object> maps = (HashMap<String, Object>) data;
-                                //国家
-                                    String country = (String) maps.get("country");
-                                    //手机号
-                                    String phone = (String) maps.get("phone");
-                               submitUserInfo(country, phone);
-                            }
+                    public void afterEvent(int event, int result, Object data) {
+                        //判断结果是否已经完成
+                        if (result == SMSSDK.RESULT_COMPLETE) {
+                            //获取data
+                            HashMap<String, Object> maps = (HashMap<String, Object>) data;
+                            //国家
+                            String country = (String) maps.get("country");
+                            //手机号
+                            String phone = (String) maps.get("phone");
+                            submitUserInfo(country, phone);
+                        }
                     }
                 });
                 //显示注册界面
@@ -125,7 +164,6 @@ public class Yneedapp extends Activity implements OnClickListener {
             }
 
         });
-
 
         initView();
         initEvents();
@@ -142,6 +180,8 @@ public class Yneedapp extends Activity implements OnClickListener {
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
             searchlayout = (LinearLayout) findViewById(R.id.serarch_layout);
+            ic_layout = (LinearLayout) findViewById(R.id.ic);
+            cic_layout = (LinearLayout) findViewById(R.id.cic);
             mEtSearch = (EditText) findViewById(R.id.et_search);
             mBtnClearSearchText = (Button) findViewById(R.id.btn_clear_search_text);
             mLayoutClearSearchText = (LinearLayout) findViewById(R.id.layout_clear_search_text);
@@ -304,6 +344,10 @@ public class Yneedapp extends Activity implements OnClickListener {
                 myPager.setVisibility(View.VISIBLE);  //设置滚动图片可见
                 ovalLayout.setVisibility(View.VISIBLE);//设置进度小圆点可见
                 searchlayout.setVisibility(View.VISIBLE);//设置进度s搜索栏可见
+                ic_layout.setVisibility(View.GONE);
+                cic_layout.setVisibility(View.VISIBLE);
+
+
                 break;
             case R.id.id_tab_frd:
                 mViewPager.setCurrentItem(1);
@@ -312,6 +356,10 @@ public class Yneedapp extends Activity implements OnClickListener {
                 myPager.setVisibility(View.GONE); //设置滚动图片隐藏
                 ovalLayout.setVisibility(View.GONE);//设置进度小圆点隐藏
                 searchlayout.setVisibility(View.GONE);
+                ic_layout.setVisibility(View.VISIBLE);
+                cic_layout.setVisibility(View.GONE);
+
+
                 break;
             case R.id.id_tab_address:
                 mViewPager.setCurrentItem(2);
@@ -320,6 +368,9 @@ public class Yneedapp extends Activity implements OnClickListener {
                 myPager.setVisibility(View.GONE);
                 ovalLayout.setVisibility(View.GONE);
                 searchlayout.setVisibility(View.GONE);
+                ic_layout.setVisibility(View.GONE);
+                cic_layout.setVisibility(View.GONE);
+
                 break;
             default:
                 break;

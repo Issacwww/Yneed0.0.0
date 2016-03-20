@@ -38,6 +38,12 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <activity android:name=".information_listview"/>
+        <activity android:name=".mes_kaogong"/>
+        <activity android:name=".mes_toefl"/>
+        <activity android:name=".mes_ielts"/>
+        <activity android:name=".course_ielts"/>
+        <activity android:name=".course_kaogong"/>
+        <activity android:name=".course_toefl"/>
     </application>
 
 </manifest>

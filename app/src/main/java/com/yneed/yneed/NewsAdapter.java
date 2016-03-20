@@ -14,12 +14,10 @@ import android.widget.TextView;
 
 import java.util.List;
 
-
 public class NewsAdapter extends BaseAdapter {
 
     private Context context;
     private List<News> newsList;
-
     public NewsAdapter(Context context, List<News> newsList){
         this.context = context;
         this.newsList = newsList;

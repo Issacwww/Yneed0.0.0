@@ -15,14 +15,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-public class information_listview extends Activity implements OnItemClickListener{
+public class mes_ielts extends Activity implements OnItemClickListener{
 
     private ListView lvNews;
     private NewsAdapter adapter;
     private List<News> newsList;
 
     //此处需要修改为自己的服务器地址
-    public static final String GET_NEWS_URL = "http://192.168.1.111/NewsDemo/getMkaogongJOSN.php";
+    public static final String GET_NEWS_URL = "http:/192.168.56.1/YneedDemo/getNewsJSON.php";
 
     private Handler getNewsHandler = new Handler(){
 
@@ -50,14 +50,14 @@ public class information_listview extends Activity implements OnItemClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.information_lv);
+        setContentView(R.layout.mes_ielts);
 
-        lvNews = (ListView) findViewById(R.id.lvNews);
+        lvNews = (ListView) findViewById(R.id.mesi);
         newsList = new ArrayList<News>();
         adapter = new NewsAdapter(this, newsList);
 
-      lvNews.setAdapter(adapter);
-      lvNews.setOnItemClickListener(this);
+        lvNews.setAdapter(adapter);
+        lvNews.setOnItemClickListener(this);
 
 
         HttpUtils.getNewsJSON(GET_NEWS_URL, getNewsHandler);
@@ -72,3 +72,4 @@ public class information_listview extends Activity implements OnItemClickListene
     }
 
 }
+
