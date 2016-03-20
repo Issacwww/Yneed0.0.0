@@ -130,7 +130,14 @@ public class Yneedapp extends Activity implements OnClickListener {
                 startActivity(new Intent(Yneedapp.this, course_kaogong.class));
             }
         });
-
+        Button login = (Button) findViewById(R.id.login);
+        login.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Yneedapp.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
         //初始化
         SMSSDK.initSDK(this, APPKEY, APPSECRETE);
         //配置信息
