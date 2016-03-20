@@ -40,6 +40,7 @@ import cn.smssdk.gui.RegisterPage;
 
 public class Yneedapp extends Activity implements OnClickListener {
 
+    private LinearLayout sign_in;
     private ViewPager mViewPager;
     private PagerAdapter mAdapter;
     private List<View> mViews = new ArrayList<View>();
@@ -142,8 +143,9 @@ public class Yneedapp extends Activity implements OnClickListener {
         SMSSDK.initSDK(this, APPKEY, APPSECRETE);
         //配置信息
         mzhuce_button= (Button) findViewById(R.id.zhuce1);//绑定注册按钮
-        //设置点击事件
 
+        //设置点击事件
+         sign_in = (LinearLayout) findViewById(R.id.sign_in);
         mzhuce_button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {//注册手机号
@@ -345,6 +347,7 @@ public class Yneedapp extends Activity implements OnClickListener {
         resetImg();
         switch (v.getId()) {
             case R.id.id_tab_weixin:
+
                 mViewPager.setCurrentItem(0);
                 mWeixinImg.setImageResource(R.drawable.course1);
 
@@ -353,6 +356,7 @@ public class Yneedapp extends Activity implements OnClickListener {
                 searchlayout.setVisibility(View.VISIBLE);//设置进度s搜索栏可见
                 ic_layout.setVisibility(View.GONE);
                 cic_layout.setVisibility(View.VISIBLE);
+                sign_in.setVisibility(View.GONE);
 
 
                 break;
@@ -365,8 +369,7 @@ public class Yneedapp extends Activity implements OnClickListener {
                 searchlayout.setVisibility(View.GONE);
                 ic_layout.setVisibility(View.VISIBLE);
                 cic_layout.setVisibility(View.GONE);
-
-
+                sign_in.setVisibility(View.GONE);
                 break;
             case R.id.id_tab_address:
                 mViewPager.setCurrentItem(2);
@@ -377,7 +380,7 @@ public class Yneedapp extends Activity implements OnClickListener {
                 searchlayout.setVisibility(View.GONE);
                 ic_layout.setVisibility(View.GONE);
                 cic_layout.setVisibility(View.GONE);
-
+                sign_in.setVisibility(View.VISIBLE);
                 break;
             default:
                 break;

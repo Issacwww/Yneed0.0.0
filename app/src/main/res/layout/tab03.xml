@@ -18,11 +18,6 @@
         android:text="This is User Tab"
         android:textSize="30sp"
         android:textStyle="bold" />
-    <Button
-        android:id="@+id/zhuce"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="注册@@"/>
 
 
 </LinearLayout>
