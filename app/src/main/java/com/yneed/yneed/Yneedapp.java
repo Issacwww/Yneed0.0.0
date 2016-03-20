@@ -256,13 +256,13 @@ public class Yneedapp extends Activity implements OnClickListener {
                 resetImg();
                 switch (currentItem) {
                     case 0:
-                        mWeixinImg.setImageResource(R.drawable.tab_weixin_pressed);
+                        mWeixinImg.setImageResource(R.drawable.course1);
                         break;
                     case 1:
-                        mFrdImg.setImageResource(R.drawable.tab_find_frd_pressed);
+                        mFrdImg.setImageResource(R.drawable.message1);
                         break;
                     case 2:
-                        mAddressImg.setImageResource(R.drawable.tab_address_pressed);
+                        mAddressImg.setImageResource(R.drawable.user1);
                         break;
 
 
@@ -339,7 +339,7 @@ public class Yneedapp extends Activity implements OnClickListener {
         switch (v.getId()) {
             case R.id.id_tab_weixin:
                 mViewPager.setCurrentItem(0);
-                mWeixinImg.setImageResource(R.drawable.tab_weixin_pressed);
+                mWeixinImg.setImageResource(R.drawable.course1);
 
                 myPager.setVisibility(View.VISIBLE);  //设置滚动图片可见
                 ovalLayout.setVisibility(View.VISIBLE);//设置进度小圆点可见
@@ -351,7 +351,7 @@ public class Yneedapp extends Activity implements OnClickListener {
                 break;
             case R.id.id_tab_frd:
                 mViewPager.setCurrentItem(1);
-                mFrdImg.setImageResource(R.drawable.tab_find_frd_pressed);
+                mFrdImg.setImageResource(R.drawable.message1);
 
                 myPager.setVisibility(View.GONE); //设置滚动图片隐藏
                 ovalLayout.setVisibility(View.GONE);//设置进度小圆点隐藏
@@ -363,7 +363,7 @@ public class Yneedapp extends Activity implements OnClickListener {
                 break;
             case R.id.id_tab_address:
                 mViewPager.setCurrentItem(2);
-                mAddressImg.setImageResource(R.drawable.tab_address_pressed);
+                mAddressImg.setImageResource(R.drawable.user1);
 
                 myPager.setVisibility(View.GONE);
                 ovalLayout.setVisibility(View.GONE);
@@ -382,9 +382,9 @@ public class Yneedapp extends Activity implements OnClickListener {
      * 将所有的图片切换为暗色的
      */
     private void resetImg() {
-        mWeixinImg.setImageResource(R.drawable.tab_weixin_normal);
-        mFrdImg.setImageResource(R.drawable.tab_find_frd_normal);
-        mAddressImg.setImageResource(R.drawable.tab_address_normal);
+        mWeixinImg.setImageResource(R.drawable.course0);
+        mFrdImg.setImageResource(R.drawable.message0);
+        mAddressImg.setImageResource(R.drawable.user0);
     }
 
     @Override
