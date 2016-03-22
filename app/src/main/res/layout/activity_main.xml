@@ -110,6 +110,25 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ImageButton
+                    android:id="@+id/yanjiusheng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/yanjiusheng" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="10dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:text="         考研"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageButton
                     android:id="@+id/toefl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -197,6 +216,25 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ImageButton
+                    android:id="@+id/cyanjiusheng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/yanjiusheng" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="10dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:text="  考研"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageButton
                     android:id="@+id/ctoefl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -208,7 +246,7 @@
                     android:layout_margin="10dp"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:text="         托福"/>
+                    android:text="     托福"/>
             </LinearLayout>
 
             <LinearLayout
@@ -229,7 +267,7 @@
                     android:layout_margin="10dp"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:text="         雅思"/>
+                    android:text="   雅思"/>
             </LinearLayout>
 
             <LinearLayout
@@ -251,7 +289,7 @@
                     android:layout_margin="10dp"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:text="         考公"/>
+                    android:text="   考公"/>
             </LinearLayout>
 
         </LinearLayout>

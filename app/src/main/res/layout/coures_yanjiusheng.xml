@@ -5,6 +5,11 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent" >
 
+    <com.yneed.yneed.CircleProgressBar
+        android:id="@+id/circleProgressbar"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_centerInParent="true" />
 
 
 

@@ -113,6 +113,12 @@ public class Yneedapp extends Activity implements OnClickListener {
                 startActivity(new Intent(Yneedapp.this, mes_kaogong.class));
             }
         });
+        findViewById(R.id.cyanjiusheng).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Yneedapp.this, course_yanjiusheng.class));
+            }
+        });
         findViewById(R.id. cies).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
