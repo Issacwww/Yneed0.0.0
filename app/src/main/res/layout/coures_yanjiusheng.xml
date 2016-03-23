@@ -4,13 +4,57 @@
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent" >
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="  拼课进度"
+    android:textStyle="bold"
+    android:textSize="30dp"
+    android:layout_marginTop="75dp"
+    android:id="@+id/jingdu"
+    android:layout_alignParentTop="true"
+    android:layout_alignLeft="@+id/circleProgressbar"
+    android:layout_alignStart="@+id/circleProgressbar" />
 
     <com.yneed.yneed.CircleProgressBar
         android:id="@+id/circleProgressbar"
-        android:layout_width="74dp"
-        android:layout_height="74dp"
-        android:layout_centerInParent="true" />
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/jingdu"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/dangqianjinge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  最新价格："
+        android:textStyle="bold"
+        android:textSize="20dp"
 
 
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/circleProgressbar"
+        android:layout_toLeftOf="@+id/money"
+        android:layout_toStartOf="@+id/money" />
+    <TextView
+        android:id="@+id/money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  3000"
+        android:textColor="#890317"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/dangqianjinge"
+        android:layout_alignRight="@+id/circleProgressbar"
+        android:layout_alignEnd="@+id/circleProgressbar" />
+    <TextView
+        android:id="@+id/jieshao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="课程介绍："
+        android:textSize="25dp"
+        android:layout_below="@+id/dangqianjinge"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

@@ -20,9 +20,10 @@ public class CircleProgressBar extends View {
 
     private int mProgress = 30;
 
+    //环形宽度
     private final int mCircleLineStrokeWidth = 8;
 
-    private final int mTxtStrokeWidth = 2;
+    private final int mTxtStrokeWidth = 5;
 
     // 画圆所在的距形区域
     private final RectF mRectF;
@@ -71,6 +72,7 @@ public class CircleProgressBar extends View {
         canvas.drawArc(mRectF, -90, 360, false, mPaint);
         mPaint.setColor(Color.rgb(0xf8, 0x60, 0x30));
         canvas.drawArc(mRectF, -90, ((float) mProgress / mMaxProgress) * 360, false, mPaint);
+
 
         // 绘制进度文案显示
         mPaint.setStrokeWidth(mTxtStrokeWidth);
