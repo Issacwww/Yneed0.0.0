@@ -113,6 +113,7 @@
                     android:id="@+id/yanjiusheng"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/yanjiusheng" />
                 <TextView
                     android:layout_width="match_parent"
@@ -130,6 +131,7 @@
                 android:orientation="vertical">
                 <ImageButton
                     android:id="@+id/toefl"
+                    android:background="@android:color/transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/toefl" />
@@ -150,6 +152,7 @@
                 android:orientation="vertical">
                 <ImageButton
                     android:id="@+id/ies"
+                    android:background="@android:color/transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ielts"
@@ -172,6 +175,7 @@
 
                 <ImageButton
                     android:id="@+id/kaogong"
+                    android:background="@android:color/transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/kaogong"
@@ -217,6 +221,7 @@
                 android:orientation="vertical">
                 <ImageButton
                     android:id="@+id/cyanjiusheng"
+                    android:background="@android:color/transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/yanjiusheng" />
@@ -236,6 +241,7 @@
                 android:orientation="vertical">
                 <ImageButton
                     android:id="@+id/ctoefl"
+                    android:background="@android:color/transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/toefl" />
@@ -256,6 +262,7 @@
                 android:orientation="vertical">
                 <ImageButton
                     android:id="@+id/cies"
+                    android:background="@android:color/transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ielts"
@@ -278,6 +285,7 @@
 
                 <ImageButton
                     android:id="@+id/ckaogong"
+                    android:background="@android:color/transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/kaogong"

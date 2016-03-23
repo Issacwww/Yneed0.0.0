@@ -22,7 +22,15 @@ android:layout_height="match_parent" >
         android:layout_height="150dp"
         android:layout_below="@+id/jingdu"
         android:layout_centerHorizontal="true" />
-
+    <TextView
+        android:id="@+id/renshu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 拼课人数： 9"
+        android:textSize="15dp"
+        android:layout_marginTop="41dp"
+        android:layout_below="@+id/jingdu"
+        android:layout_centerHorizontal="true" />
     <TextView
         android:id="@+id/dangqianjinge"
         android:layout_width="wrap_content"
@@ -30,12 +38,9 @@ android:layout_height="match_parent" >
         android:text="  最新价格："
         android:textStyle="bold"
         android:textSize="20dp"
-
-
-        android:layout_marginTop="47dp"
         android:layout_below="@+id/circleProgressbar"
-        android:layout_toLeftOf="@+id/money"
-        android:layout_toStartOf="@+id/money" />
+        android:layout_toLeftOf="@+id/buy"
+        android:layout_toStartOf="@+id/buy" />
     <TextView
         android:id="@+id/money"
         android:layout_width="wrap_content"
@@ -55,6 +60,37 @@ android:layout_height="match_parent" >
         android:textSize="25dp"
         android:layout_below="@+id/dangqianjinge"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="71dp" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/buy"
+        android:src="@drawable/buy"
+        android:background="@android:color/transparent"
+        android:layout_below="@+id/money"
+        android:layout_alignRight="@+id/money"
+        android:layout_alignEnd="@+id/money"
+        android:layout_marginTop="19dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/more"
+        android:src="@drawable/more"
+        android:layout_alignTop="@+id/money"
+        android:layout_toRightOf="@+id/money"
+        android:layout_toEndOf="@+id/money" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/phone"
+        android:src="@drawable/phone"
+        android:background="@android:color/transparent"
+        android:layout_alignTop="@+id/buy"
+        android:layout_alignLeft="@+id/circleProgressbar"
+        android:layout_alignStart="@+id/circleProgressbar" />
 
 </RelativeLayout>
