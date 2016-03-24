@@ -92,5 +92,100 @@ android:layout_height="match_parent" >
         android:layout_alignTop="@+id/buy"
         android:layout_alignLeft="@+id/circleProgressbar"
         android:layout_alignStart="@+id/circleProgressbar" />
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开课地点：工大培训管家"
+        android:textSize="20dp"
+        android:layout_below="@+id/jianshao"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="31dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="一键咨询"
+        android:id="@+id/textView"
+        android:layout_below="@+id/phone"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="立即拼课"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/buy"
+        android:layout_alignLeft="@+id/buy"
+        android:layout_alignStart="@+id/buy" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="考研教程，30至270天高端特训，5倍提升学习效率，工大培训管家整合杭州多家考研机构，设立不同课程，量身定制辅导方案，名师个性化辅导，足不出校，让您轻松考研。"
+        android:id="@+id/jianshao"
+        android:layout_below="@+id/jieshao" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/map"
+        android:src="@drawable/location"
+        android:layout_alignTop="@+id/location"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/xhd"
+        android:src="@drawable/xinhangdao"
+        android:layout_alignTop="@+id/oufen"
+        android:layout_toRightOf="@+id/location"
+        android:layout_toEndOf="@+id/location" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/huatu"
+        android:src="@drawable/huatu"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/oufen"
+        android:src="@drawable/oufeng"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/map"
+        android:layout_alignStart="@+id/map" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="合作伙伴"
+        android:id="@+id/textView3"
+        android:layout_above="@+id/huatu"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textStyle="bold"
+        android:textColor="#152"
+        android:text="更多..."
+        android:id="@+id/textView4"
+        android:layout_marginRight="27dp"
+        android:layout_marginEnd="27dp"
+        android:layout_alignBottom="@+id/jianshao"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

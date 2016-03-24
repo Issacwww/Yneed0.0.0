@@ -232,7 +232,7 @@
                     android:layout_margin="10dp"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:text="  考研"/>
+                    android:text="      考研"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_weight="1"
@@ -252,7 +252,7 @@
                     android:layout_margin="10dp"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:text="     托福"/>
+                    android:text="      托福"/>
             </LinearLayout>
 
             <LinearLayout
@@ -274,7 +274,7 @@
                     android:layout_margin="10dp"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:text="   雅思"/>
+                    android:text="       雅思"/>
             </LinearLayout>
 
             <LinearLayout
@@ -297,7 +297,7 @@
                     android:layout_margin="10dp"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:text="   考公"/>
+                    android:text="      考公"/>
             </LinearLayout>
 
         </LinearLayout>
