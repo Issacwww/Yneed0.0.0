@@ -22,7 +22,7 @@ public class mes_kaogong  extends Activity implements OnItemClickListener{
     private List<News> newsList;
 
     //此处需要修改为自己的服务器地址
-    public static final String GET_NEWS_URL = "http://192.168.1.111/NewsDemo/getMkaogongJOSN.php";
+    public static final String GET_NEWS_URL = "http://192.168.1.106/NewsDemo/getMkaogongJOSN.php";
 
     private Handler getNewsHandler = new Handler(){
 

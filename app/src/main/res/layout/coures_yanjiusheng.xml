@@ -109,8 +109,9 @@ android:layout_height="match_parent" >
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="一键咨询"
         android:id="@+id/textView"
-        android:layout_below="@+id/phone"
-       />
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignLeft="@+id/dangqianjinge"
+        android:layout_alignStart="@+id/dangqianjinge" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -135,9 +136,11 @@ android:layout_height="match_parent" >
         android:layout_height="wrap_content"
         android:id="@+id/map"
         android:src="@drawable/location"
-        android:layout_alignTop="@+id/location"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/jianshao"
+        android:layout_alignRight="@+id/textView4"
+        android:layout_alignEnd="@+id/textView4"
+        android:layout_toEndOf="@+id/location"
+        android:layout_toRightOf="@+id/location" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -145,8 +148,8 @@ android:layout_height="match_parent" >
         android:id="@+id/xhd"
         android:src="@drawable/xinhangdao"
         android:layout_alignTop="@+id/oufen"
-        android:layout_toRightOf="@+id/location"
-        android:layout_toEndOf="@+id/location" />
+        android:layout_alignLeft="@+id/phone"
+        android:layout_alignStart="@+id/phone" />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -160,9 +163,9 @@ android:layout_height="match_parent" >
         android:layout_height="wrap_content"
         android:id="@+id/oufen"
         android:src="@drawable/oufeng"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/map"
-        android:layout_alignStart="@+id/map" />
+        android:layout_alignTop="@+id/huatu"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
