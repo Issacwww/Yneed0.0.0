@@ -61,6 +61,7 @@ public class Yneedapp extends Activity implements OnClickListener {
     private LinearLayout ovalLayout; // 圆点容器
     private List<View> listViews; // 图片组
 
+    private  LinearLayout tb03;
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -138,6 +139,7 @@ public class Yneedapp extends Activity implements OnClickListener {
             }
         });
         Button login = (Button) findViewById(R.id.login);
+        tb03 = (LinearLayout) findViewById(R.id.sign1111);
         sign_in = (LinearLayout) findViewById(R.id.sign_in);
         login.setOnClickListener(new OnClickListener() {
             @Override
@@ -365,8 +367,7 @@ public class Yneedapp extends Activity implements OnClickListener {
                 ic_layout.setVisibility(View.GONE);
                 cic_layout.setVisibility(View.VISIBLE);
                 sign_in.setVisibility(View.GONE);
-
-
+                tb03.setVisibility(View.GONE);
                 break;
             case R.id.id_tab_frd:
                 mViewPager.setCurrentItem(1);
@@ -378,6 +379,7 @@ public class Yneedapp extends Activity implements OnClickListener {
                 ic_layout.setVisibility(View.VISIBLE);
                 cic_layout.setVisibility(View.GONE);
                 sign_in.setVisibility(View.GONE);
+                tb03.setVisibility(View.GONE);
                 break;
             case R.id.id_tab_address:
                 mViewPager.setCurrentItem(2);
@@ -389,6 +391,7 @@ public class Yneedapp extends Activity implements OnClickListener {
                 ic_layout.setVisibility(View.GONE);
                 cic_layout.setVisibility(View.GONE);
                 sign_in.setVisibility(View.VISIBLE);
+                tb03.setVisibility(View.VISIBLE);
                 break;
             default:
                 break;

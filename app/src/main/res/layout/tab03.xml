@@ -5,19 +5,5 @@
     android:orientation="vertical" >
 
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="147dp"
-        android:src="@drawable/login"
-        android:gravity="center"
-        />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="This is User Tab"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
 
 </LinearLayout>
