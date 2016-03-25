@@ -138,11 +138,13 @@ public class Yneedapp extends Activity implements OnClickListener {
             }
         });
         Button login = (Button) findViewById(R.id.login);
+        sign_in = (LinearLayout) findViewById(R.id.sign_in);
         login.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Yneedapp.this, LoginActivity.class);
                 startActivity(intent);
+                sign_in.setVisibility(View.INVISIBLE);
             }
         });
         //初始化
@@ -151,7 +153,7 @@ public class Yneedapp extends Activity implements OnClickListener {
         mzhuce_button= (Button) findViewById(R.id.zhuce1);//绑定注册按钮
 
         //设置点击事件
-         sign_in = (LinearLayout) findViewById(R.id.sign_in);
+
         mzhuce_button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {//注册手机号
