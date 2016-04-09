@@ -21,7 +21,7 @@
             android:id="@+id/zhuce1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="注册@@"/>
+            android:text="注册"/>
 
     </LinearLayout>
 
@@ -100,7 +100,10 @@
             android:text="文章分类"
             android:textSize="30sp"
             android:textStyle="bold" />
+
+
         <LinearLayout
+            android:layout_margin="50dp"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:orientation="horizontal">
@@ -111,9 +114,9 @@
                 android:orientation="vertical">
                 <ImageButton
                     android:id="@+id/yanjiusheng"
+                    android:background="@android:color/transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
                     android:src="@drawable/yanjiusheng" />
                 <TextView
                     android:layout_width="match_parent"
@@ -122,8 +125,9 @@
                     android:layout_margin="10dp"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:text="         考研"/>
+                    android:text="      考研"/>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
@@ -167,6 +171,31 @@
                     android:text="         雅思"/>
             </LinearLayout>
 
+           </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/xiaoyuzhong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/xiaoyuzhong" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="10dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:text="         小语种"/>
+            </LinearLayout>
             <LinearLayout
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
@@ -190,7 +219,31 @@
                     android:text="         考公"/>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/wine"
+                    android:background="@android:color/transparent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/wine"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="10dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:text="         红酒课"/>
+            </LinearLayout>
+
         </LinearLayout>
+
 
     </LinearLayout>
 </RelativeLayout>
@@ -198,7 +251,7 @@
     <LinearLayout
         android:id="@+id/vb"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="40dp"
         android:layout_marginTop="3dip"
         android:gravity="center"
         android:orientation="horizontal" >
@@ -212,7 +265,7 @@
         android:orientation="vertical" >
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="207dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_weight="1"
@@ -277,6 +330,34 @@
                     android:text="       雅思"/>
             </LinearLayout>
 
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_margin="30dp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/cxiaoyuzhong"
+                    android:background="@android:color/transparent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/xiaoyuzhong" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="10dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:text="      小语种"/>
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
@@ -298,6 +379,29 @@
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:text="      考公"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/cwine"
+                    android:background="@android:color/transparent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/wine"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="10dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:text="      红酒课"/>
             </LinearLayout>
 
         </LinearLayout>
