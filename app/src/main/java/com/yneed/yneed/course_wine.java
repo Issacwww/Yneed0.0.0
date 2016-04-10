@@ -52,7 +52,7 @@ public class course_wine  extends Activity implements OnItemClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.course_wine);
 
-        lvNews = (ListView) findViewById(R.id.couk);
+        lvNews = (ListView) findViewById(R.id.couw);
         newsList = new ArrayList<News>();
         adapter = new NewsAdapter(this, newsList);
 

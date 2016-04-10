@@ -52,7 +52,7 @@ public class course_xiaoyuzhong  extends Activity implements OnItemClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.course_xiaoyuzhong);
 
-        lvNews = (ListView) findViewById(R.id.couk);
+        lvNews = (ListView) findViewById(R.id.coux);
         newsList = new ArrayList<News>();
         adapter = new NewsAdapter(this, newsList);
 
