@@ -102,6 +102,18 @@ public class Yneedapp extends Activity implements OnClickListener {
                 startActivity(new Intent(Yneedapp.this, mes_ielts.class));
             }
         });
+        findViewById(R.id.wine).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Yneedapp.this, mes_wine.class));
+            }
+        });
+        findViewById(R.id.xiaoyuzhong).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Yneedapp.this, mes_xiaoyuzhong.class));
+            }
+        });
         findViewById(R.id.toefl).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,6 +148,18 @@ public class Yneedapp extends Activity implements OnClickListener {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Yneedapp.this, course_kaogong.class));
+            }
+        });
+        findViewById(R.id.cwine).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Yneedapp.this, course_wine.class));
+            }
+        });
+        findViewById(R.id.cxiaoyuzhong).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Yneedapp.this, course_xiaoyuzhong.class));
             }
         });
         Button login = (Button) findViewById(R.id.login);
