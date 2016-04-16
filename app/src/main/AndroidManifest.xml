@@ -50,14 +50,10 @@
         <activity android:name=".mes_kaogong" />
         <activity android:name=".mes_toefl" />
         <activity android:name=".mes_ielts" />
-        <activity android:name=".mes_wine" />
-        <activity android:name=".mes_xiaoyuzhong" />
         <activity android:name=".course_ielts" />
         <activity android:name=".course_kaogong" />
         <activity android:name=".course_toefl" />
         <activity android:name=".course_yanjiusheng" />
-        <activity android:name=".course_wine" />
-        <activity android:name=".course_xiaoyuzhong" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"></activity>
